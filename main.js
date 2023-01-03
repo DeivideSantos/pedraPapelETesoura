@@ -37,7 +37,7 @@ function PlayNow() {
 
 
     rock.addEventListener('click', function(e){
-     if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Vocês empataram'} 
+     if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'} 
      else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você perdeu!'}
       if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
       return PPT()
