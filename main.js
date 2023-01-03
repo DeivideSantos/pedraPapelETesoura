@@ -64,17 +64,17 @@ PlayNow()
 
 function score() {
     rock.addEventListener('click', function(e){
-        if (computerPlay === 2) {document.querySelector('.pontComp').innerHTML = pontoComputer++}
-        else if (computerPlay === 3) {document.querySelector('.pontPlayer').innerHTML = pontoPlayer++}
+        if (computerPlay === 2) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
+        else if (computerPlay === 3) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
     })
 
     paper.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.pontPlayer').innerHTML = pontoPlayer++}
-        else if(computerPlay === 3) {document.querySelector('.pontComp').innerHTML = pontoComputer++}
+        if (computerPlay === 1) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
+        else if(computerPlay === 3) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
     })
     cissor.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.pontComp').innerHTML = pontoComputer++}
-        else if (computerPlay === 2) {document.querySelector('.pontPlayer').innerHTML = pontoPlayer++}
+        if (computerPlay === 1) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
+        else if (computerPlay === 2) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
     })
     
     
