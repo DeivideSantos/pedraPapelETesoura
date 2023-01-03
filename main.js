@@ -1,43 +1,60 @@
-function playround(player, computer){
-    let pedra = document.querySelector('.b1')
-    let papel = document.querySelector('.b2')
-    let tesoura = document.querySelector('.b3')
-    const text = document.querySelector('.inner')
-    
-    let texto;
-    let decisionComputer
-    let decisionPlayer;
-
-    switch (decisionplayer) {
-        case pedra: if (decisionComputer === pedra) {
-            document.querySelector('.inner').innerHTML = 'Vocês empataram, bora de proxíma!'
-            if  (decisionComputer === papel); {
-                document.querySelector('.inner').innerHTML = 'Você perdeu!'
-                if (decisionComputer === tesoura); {
-                    document.querySelector('.inner').innerHTML = 'Você ganhou!'
-            
-                }
-            }
-
-        }
-    }
-    
-}
-
-function logicGame() {
-    let decisionComputer = random(3)
-    let comput
-    switch (comput) {
-        case 1: comput = 'pedra'
-        break;
-        case 2: comput = 'papel'
-        break;
-        case 3: comput = 'tesoura'
-        break;
-    }
-}
 function random(number) {
     return Math.floor(Math.random() * number + 1);
+    
 }
 
-playround()
+
+function PPT() {
+    let computerGet = random(3)
+    
+    switch (computerGet) {
+        case 1: computerPlay = 1
+        console.log('PEDRA')
+        break; 
+        case 2: computerPlay = 2
+        console.log('PAPEL')
+        break;
+        case 3: computerPlay = 3 
+        console.log("TESOURA")
+        break;   
+        
+        default: "erro"
+        break;
+    }
+}
+
+var computerPlay;
+
+
+let rock = document.querySelector('.b1')
+let paper = document.querySelector('.b2')
+let cissor = document.querySelector('.b3')
+let text = document.querySelector('.inner')
+
+
+PPT()
+function PlayNow() { 
+
+    rock.addEventListener('click', function(e){
+     if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Vocês empataram'}
+     else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você perdeu!'}
+      if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+      return PPT()
+    })
+    
+    paper.addEventListener('click', function(e){
+        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+        else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'}
+        if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você Perdeu!'}
+        return PPT()
+    })
+    
+    cissor.addEventListener('click', function(e){
+        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você perdeu!'}
+        else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+        if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'}
+        return PPT() 
+    })
+}
+
+PlayNow()
