@@ -35,49 +35,40 @@ var pontoComputer = 1
 
 function PlayNow() { 
 
+   
 
     rock.addEventListener('click', function(e){
      if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'} 
-     else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você perdeu!'}
-      if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+     else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você perdeu!'; 
+     document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
+      if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você ganhou!'; 
+      document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
       return PPT()
     })
     
     paper.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você ganhou!'
+        document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
         else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'} 
-        if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você Perdeu!'} 
+        if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Você Perdeu!'; 
+        document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
         return PPT()
     })
     
     cissor.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você perdeu!'} 
-        else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você ganhou!'}
+        if (computerPlay === 1) {document.querySelector('.inner').innerHTML = 'Você perdeu!';
+        document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`} 
+        else if (computerPlay === 2) {document.querySelector('.inner').innerHTML = 'Você ganhou!';
+        document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
         if (computerPlay === 3) {document.querySelector('.inner').innerHTML = 'Vocês empataram!'}
         return PPT() 
 
+        
         
     })
 
 }
 PlayNow()
 
-function score() {
-    rock.addEventListener('click', function(e){
-        if (computerPlay === 2) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
-        else if (computerPlay === 3) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
-    })
 
-    paper.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
-        else if(computerPlay === 3) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
-    })
-    cissor.addEventListener('click', function(e){
-        if (computerPlay === 1) {document.querySelector('.pontComp').innerHTML = `Computador: ${pontoComputer++}`}
-        else if (computerPlay === 2) {document.querySelector('.pontPlayer').innerHTML = `Player: ${pontoPlayer++}`}
-    })
-    
-    
-}
 
-score()
